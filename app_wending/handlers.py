@@ -6,6 +6,7 @@ import app_wending.keyboards as kb
 router = Router()
 
 
+#  Отлавливаем команду /start
 @router.message(CommandStart())
 async def cmd_start(message: Message):
     await message.answer(f'Привет! {message.from_user.username}',
@@ -19,40 +20,12 @@ async def seazons_spring(callback: CallbackQuery):
     await callback.message.edit_text('Выбор сезона', reply_markup=kb.seazons)
 
 
-#################### Первый под уровень квиза - блок сезонов #########################
-@router.callback_query(F.data == 'spring')
-async def seazons_spring(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text('Весна', reply_markup=kb.next_back_seazon)
+# @router.message(F.photo)
+# async def get_photo(message: Message):
+#     await message.answer(f'ID фото: {message.photo[-1].file_id}')
 
 
-@router.callback_query(F.data == 'summer')
-async def seazons_summer(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text('Лето', reply_markup=kb.next_back_seazon)
-
-
-@router.callback_query(F.data == 'autumn')
-async def seazons_autumn(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text('Осень', reply_markup=kb.next_back_seazon)
-
-
-@router.callback_query(F.data == 'winter')
-async def seazons_winter(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text('Зима', reply_markup=kb.next_back_seazon)
-
-
-@router.callback_query(F.data.startswith('seazons'))
-async def back_seazons(callback: CallbackQuery):
-    await callback.answer()
-    await callback.message.edit_text('Вернулись на выбор сезона', reply_markup=kb.seazons)
-
-
-#################### Второй уровень квиза - Количество гостей #########################
-
-
+#################### 0й Уровень ###############################
 @router.callback_query(F.data == 'about')
 async def main_about(callback: CallbackQuery):
     await callback.answer('Вы выбрали "О нас"')
@@ -63,7 +36,7 @@ async def main_about(callback: CallbackQuery):
 async def main_about_b(callback: CallbackQuery):
     await callback.answer()
     # await callback.message.edit_text('Бод помогает устроить вашу свадьбу', reply_markup=await kb.inline_about())
-    await callback.message.edit_text('Бод помогает устроить вашу свадьбу', reply_markup=kb.back)
+    await callback.message.edit_text('Бот помогает устроить вашу свадьбу', reply_markup=kb.back)
 
 
 @router.callback_query(F.data.startswith('Назад'))

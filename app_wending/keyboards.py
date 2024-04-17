@@ -1,7 +1,4 @@
-from aiogram.types import (ReplyKeyboardMarkup, KeyboardButton,
-                           InlineKeyboardMarkup, InlineKeyboardButton)
-from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
-
+from aiogram.types import (InlineKeyboardMarkup, InlineKeyboardButton)
 
 main = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Старт квиза', callback_data='quiz'),
@@ -10,27 +7,32 @@ main = InlineKeyboardMarkup(inline_keyboard=[
      InlineKeyboardButton(text='О нас', callback_data='about')],
 ])
 
-
-#################### КВеСТ #########################
+#################### Выбор сезона свадьбы #########################
 
 seazons = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='💐         Весна         💐', callback_data='spring'),
      InlineKeyboardButton(text='💐         Лето          💐', callback_data='summer')],
     [InlineKeyboardButton(text='💐         Осень         💐', callback_data='autumn'),
      InlineKeyboardButton(text='💐         Зима          💐', callback_data='winter')],
+    [InlineKeyboardButton(text='Назад', callback_data='Назад')],
 ])
 
 next_back_seazon = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='seazons'),
-     InlineKeyboardButton(text='Далее', callback_data='quantity')]])
+     InlineKeyboardButton(text='Далее', callback_data='onward')]])
 
+#################### Выбор количества участников свадьбы ##########
+amount = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Только в двоем', callback_data='together'),
+     InlineKeyboardButton(text='Только близкие', callback_data='folks')],
+    [InlineKeyboardButton(text='До 100', callback_data='upto100'),
+     InlineKeyboardButton(text='Более 100', callback_data='more100')],
+    [InlineKeyboardButton(text='Назад', callback_data='seazons')],
+])
 
-
-# async def inline_about():
-#     keyboard = InlineKeyboardBuilder()
-#     keyboard.add(InlineKeyboardButton(text='Назад', callback_data='Назад'))
-#     return keyboard.as_markup()
-
-
+next_back_amount = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='amount'),
+     InlineKeyboardButton(text='Далее', callback_data='farther')]])
+################### Клавиатура для возврата назад переиспользуется
 back = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='Назад')]])
