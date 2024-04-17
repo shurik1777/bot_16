@@ -1,5 +1,9 @@
 from aiogram.types import (InlineKeyboardMarkup, InlineKeyboardButton)
 
+################### Клавиатура для возврата назад переиспользуется
+back = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='Назад')]])
+
 main = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Старт квиза', callback_data='quiz'),
      InlineKeyboardButton(text='Результат', callback_data='result')],
@@ -33,6 +37,19 @@ amount = InlineKeyboardMarkup(inline_keyboard=[
 next_back_amount = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='amount'),
      InlineKeyboardButton(text='Далее', callback_data='farther')]])
-################### Клавиатура для возврата назад переиспользуется
-back = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Назад', callback_data='Назад')]])
+
+""" Выбор стиля свадьбы """
+
+style = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Романтическая свадьба', callback_data='romantic'),
+     InlineKeyboardButton(text='Винтажная свадьба', callback_data='vintage')],
+    [InlineKeyboardButton(text='Эксцентричная свадьба', callback_data='eccentric'),
+     InlineKeyboardButton(text='Современная свадьба', callback_data='modern')],
+    [InlineKeyboardButton(text='Классическая свадьба', callback_data='classic'),
+     InlineKeyboardButton(text='Свадьба в стиле путешествия', callback_data='travel')],
+    [InlineKeyboardButton(text='Назад', callback_data='amount')],
+])
+
+next_back_style = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='style'),
+     InlineKeyboardButton(text='Далее', callback_data='fason')]])

@@ -13,9 +13,11 @@ async def cmd_start(message: Message):
                          reply_markup=kb.main)
 
 
-#################### Первый уровень квиза - выбор сезона #########################
+""" Первый уровень квиза - выбор сезона """
+
+
 @router.callback_query(F.data == 'quiz')
-async def seazons_spring(callback: CallbackQuery):
+async def season_quiz(callback: CallbackQuery):
     await callback.answer('Вы выбрали "Выбор сезона"')
     await callback.message.edit_text('Выбор сезона', reply_markup=kb.seazons)
 
@@ -25,7 +27,9 @@ async def seazons_spring(callback: CallbackQuery):
 #     await message.answer(f'ID фото: {message.photo[-1].file_id}')
 
 
-#################### 0й Уровень ###############################
+""" 0й Уровень """
+
+
 @router.callback_query(F.data == 'about')
 async def main_about(callback: CallbackQuery):
     await callback.answer('Вы выбрали "О нас"')
