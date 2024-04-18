@@ -4,10 +4,13 @@ from os import getenv
 from dotenv import find_dotenv, load_dotenv
 from aiogram import Bot, Dispatcher
 from app_wending.handlers import router
-from app_wending.handlers_1_2 import router_one
-from app_wending.handlers_3 import router_two
-from app_wending.handlers_4 import router_three
+from app_wending.handlers_season import router_one
+from app_wending.handlers_style import router_two
+from app_wending.handlers_colors import router_three
 from app_wending.handlers_place import router_four
+from app_wending.handlers_fashion import router_five
+from app_wending.handlers_amount import router_six
+from app_wending.handlers_costume import router_seven
 
 load_dotenv(find_dotenv())
 
@@ -20,6 +23,9 @@ async def main():
     dp.include_router(router_two)
     dp.include_router(router_three)
     dp.include_router(router_four)
+    dp.include_router(router_five)
+    dp.include_router(router_six)
+    dp.include_router(router_seven)
     await dp.start_polling(bot)
 
 

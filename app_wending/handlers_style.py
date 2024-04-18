@@ -47,15 +47,15 @@ async def style_travel(callback: CallbackQuery):
         'Свадьба в стиле путешествия', reply_markup=kb.next_back_style)
 
 
-@router_two.callback_query(F.data == 'colors')
-async def style_fason(callback: CallbackQuery):
+@router_two.callback_query(F.data == 'style')
+async def back_style(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Выберите цветовую палитру', reply_markup=kb.colors)
+        'Сделайте свой выбор в пользу стиля свадьбы ниже!', reply_markup=kb.style)
 
 
-@router_two.callback_query(F.data == 'style')
+@router_two.callback_query(F.data == 'colors')
 async def season_summer(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Решили в другом стиле?', reply_markup=kb.style)
+        'Выберите в какой цветовой палитре?', reply_markup=kb.colors)

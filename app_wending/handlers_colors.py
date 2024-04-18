@@ -51,11 +51,11 @@ async def colors_quartz_pink(callback: CallbackQuery):
 async def colors_colors(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Выберите цветовую палитру', reply_markup=kb.colors)
+        'Перевыберите цветовую палитру', reply_markup=kb.colors)
 
 
-# @router_three.callback_query(F.data == 'style')
-# async def season_summer(callback: CallbackQuery):
-#     await callback.answer()
-#     await callback.message.edit_text(
-#         'Решили в другом стиле?', reply_markup=kb.style)
+@router_three.callback_query(F.data == 'fashion_main')
+async def next_fashion(callback: CallbackQuery):
+    await callback.answer()
+    await callback.message.edit_text(
+        'Выберите силуэт свадебного платья', reply_markup=kb.fashion)

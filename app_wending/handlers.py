@@ -46,7 +46,7 @@ async def main_about_b(callback: CallbackQuery):
 
 
 @router.callback_query(F.data.startswith('Назад'))
-async def back_about_b(callback: CallbackQuery):
+async def back_main(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
         'И снова привет', reply_markup=kb.main)

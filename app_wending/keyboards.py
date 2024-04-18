@@ -23,7 +23,7 @@ seasons = InlineKeyboardMarkup(inline_keyboard=[
 
 next_back_season = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='seasons'),
-     InlineKeyboardButton(text='Далее', callback_data='onward')]])
+     InlineKeyboardButton(text='Далее', callback_data='amount')]])
 
 """ Выбор количества участников свадьбы """
 amount = InlineKeyboardMarkup(inline_keyboard=[
@@ -36,7 +36,7 @@ amount = InlineKeyboardMarkup(inline_keyboard=[
 
 next_back_amount = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='amount'),
-     InlineKeyboardButton(text='Далее', callback_data='farther')]])
+     InlineKeyboardButton(text='Далее', callback_data='place')]])
 
 """ Выбор места проведения свадьбы """
 
@@ -50,7 +50,7 @@ place = InlineKeyboardMarkup(inline_keyboard=[
 
 next_back_place = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='place'),
-     InlineKeyboardButton(text='Далее', callback_data='colors')]])
+     InlineKeyboardButton(text='Далее', callback_data='style')]])
 
 """ Выбор стиля свадьбы """
 
@@ -61,7 +61,7 @@ style = InlineKeyboardMarkup(inline_keyboard=[
      InlineKeyboardButton(text='Современная свадьба', callback_data='modern')],
     [InlineKeyboardButton(text='Классическая свадьба', callback_data='classic'),
      InlineKeyboardButton(text='Свадьба в стиле travel', callback_data='travel')],
-    [InlineKeyboardButton(text='Назад', callback_data='amount')],
+    [InlineKeyboardButton(text='Назад', callback_data='place')],
 ])
 
 next_back_style = InlineKeyboardMarkup(inline_keyboard=[
@@ -82,5 +82,34 @@ colors = InlineKeyboardMarkup(inline_keyboard=[
 
 next_back_colors = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='colors'),
-     InlineKeyboardButton(text='Далее', callback_data='colors')]])
+     InlineKeyboardButton(text='Далее', callback_data='fashion_main')]])
 
+""" Выбор фасона платья """
+
+fashion = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Трапециевидный силуэт', callback_data='trapezoidal'),
+     InlineKeyboardButton(text='Русалка', callback_data='naiad')],
+    [InlineKeyboardButton(text='Футляр', callback_data='sheath'),
+     InlineKeyboardButton(text='Бальное платье', callback_data='ball_gown')],
+    [InlineKeyboardButton(text='Комбинезон', callback_data='overalls'),
+     InlineKeyboardButton(text='Ретро', callback_data='retro')],
+    [InlineKeyboardButton(text='Назад', callback_data='colors')],
+])
+
+next_back_fashion = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='fashion'),
+     InlineKeyboardButton(text='Далее', callback_data='costume')]])
+
+""" Выбор костюма жениха """
+
+costume = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Классика', callback_data='classic'),
+     InlineKeyboardButton(text='Смокинг', callback_data='tuxedo')],
+    [InlineKeyboardButton(text='Кэжуал', callback_data='casual'),
+     InlineKeyboardButton(text='Современный костюм', callback_data='something')],
+    [InlineKeyboardButton(text='Назад', callback_data='fashion')],
+])
+
+next_back_costume = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='costume'),
+     InlineKeyboardButton(text='Далее', callback_data='costume')]])

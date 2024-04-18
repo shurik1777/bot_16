@@ -9,53 +9,39 @@ router_four = Router()
 async def place_restaurant(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Банкетный зал', reply_markup=kb.next_back_style)
+        'Банкетный зал', reply_markup=kb.next_back_place)
 
 
 @router_four.callback_query(F.data == 'unique')
 async def place_unique(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
+    await callback.answer()
     await callback.message.edit_text(
-        'Уникальное локация', reply_markup=kb.next_back_style)
+        'Уникальное локация', reply_markup=kb.next_back_place)
 
 
 @router_four.callback_query(F.data == 'garden')
 async def place_garden(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text(
-        'Вечеринка в саду', reply_markup=kb.next_back_style)
-
-
-@router_four.callback_query(F.data == 'modern')
-async def place_modern(callback: CallbackQuery):
-    await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text(
-        'Современная свадьба', reply_markup=kb.next_back_style)
-
-
-@router_four.callback_query(F.data == 'classic')
-async def place_classic(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Классическая свадьба', reply_markup=kb.next_back_style)
+        'Вечеринка в саду', reply_markup=kb.next_back_place)
 
 
-@router_four.callback_query(F.data == 'travel')
-async def place_travel(callback: CallbackQuery):
+@router_four.callback_query(F.data == 'sea')
+async def place_sea(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Свадьба в стиле путешествия', reply_markup=kb.next_back_style)
+        'У берега моря', reply_markup=kb.next_back_place)
 
 
-@router_four.callback_query(F.data == 'colors')
-async def place_fason(callback: CallbackQuery):
+@router_four.callback_query(F.data == 'place')
+async def back_place(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Выберите цветовую палитру', reply_markup=kb.colors)
+        'Выберите место проведения еще раз', reply_markup=kb.place)
 
 
 @router_four.callback_query(F.data == 'style')
-async def season_summer(callback: CallbackQuery):
+async def next_style(callback: CallbackQuery):
     await callback.answer()
     await callback.message.edit_text(
-        'Решили в другом стиле?', reply_markup=kb.style)
+        'Добро пожаловать в выбор стиля', reply_markup=kb.style)
