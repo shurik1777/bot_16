@@ -19,7 +19,8 @@ async def cmd_start(message: Message):
 @router.callback_query(F.data == 'quiz')
 async def season_quiz(callback: CallbackQuery):
     await callback.answer('Вы выбрали "Выбор сезона"')
-    await callback.message.edit_text('Выбор сезона', reply_markup=kb.seazons)
+    await callback.message.edit_text(
+        'Выбор сезона', reply_markup=kb.seasons)
 
 
 # @router.message(F.photo)
@@ -33,17 +34,19 @@ async def season_quiz(callback: CallbackQuery):
 @router.callback_query(F.data == 'about')
 async def main_about(callback: CallbackQuery):
     await callback.answer('Вы выбрали "О нас"')
-    await callback.message.edit_text('Супер команда специалистов из ГБ', reply_markup=kb.back)
+    await callback.message.edit_text(
+        'Супер команда специалистов из ГБ', reply_markup=kb.back)
 
 
 @router.callback_query(F.data == 'about_b')
 async def main_about_b(callback: CallbackQuery):
     await callback.answer()
-    # await callback.message.edit_text('Бод помогает устроить вашу свадьбу', reply_markup=await kb.inline_about())
-    await callback.message.edit_text('Бот помогает устроить вашу свадьбу', reply_markup=kb.back)
+    await callback.message.edit_text(
+        'Бот помогает устроить вашу свадьбу', reply_markup=kb.back)
 
 
 @router.callback_query(F.data.startswith('Назад'))
 async def back_about_b(callback: CallbackQuery):
     await callback.answer()
-    await callback.message.edit_text('И снова привет', reply_markup=kb.main)
+    await callback.message.edit_text(
+        'И снова привет', reply_markup=kb.main)

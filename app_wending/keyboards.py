@@ -13,7 +13,7 @@ main = InlineKeyboardMarkup(inline_keyboard=[
 
 #################### Выбор сезона свадьбы #########################
 
-seazons = InlineKeyboardMarkup(inline_keyboard=[
+seasons = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='💐         Весна         💐', callback_data='spring'),
      InlineKeyboardButton(text='💐         Лето          💐', callback_data='summer')],
     [InlineKeyboardButton(text='💐         Осень         💐', callback_data='autumn'),
@@ -21,13 +21,13 @@ seazons = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='Назад')],
 ])
 
-next_back_seazon = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Назад', callback_data='seazons'),
+next_back_season = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='seasons'),
      InlineKeyboardButton(text='Далее', callback_data='onward')]])
 
 #################### Выбор количества участников свадьбы ##########
 amount = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Только в двоем', callback_data='together'),
+    [InlineKeyboardButton(text='Только вдвоем', callback_data='together'),
      InlineKeyboardButton(text='Только близкие', callback_data='folks')],
     [InlineKeyboardButton(text='До 100', callback_data='upto100'),
      InlineKeyboardButton(text='Более 100', callback_data='more100')],
