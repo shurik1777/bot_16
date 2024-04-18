@@ -1,6 +1,6 @@
 from aiogram.types import (InlineKeyboardMarkup, InlineKeyboardButton)
 
-################### Клавиатура для возврата назад переиспользуется
+""" Клавиатура для возврата назад пере используется """
 back = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='Назад')]])
 
@@ -11,7 +11,7 @@ main = InlineKeyboardMarkup(inline_keyboard=[
      InlineKeyboardButton(text='О нас', callback_data='about')],
 ])
 
-#################### Выбор сезона свадьбы #########################
+""" Выбор сезона свадьбы """
 
 seasons = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='💐         Весна         💐', callback_data='spring'),
@@ -37,6 +37,20 @@ amount = InlineKeyboardMarkup(inline_keyboard=[
 next_back_amount = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='amount'),
      InlineKeyboardButton(text='Далее', callback_data='farther')]])
+
+""" Выбор места проведения свадьбы """
+
+place = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Банкетный зал', callback_data='restaurant'),
+     InlineKeyboardButton(text='Уникальное локация', callback_data='unique')],
+    [InlineKeyboardButton(text='Вечеринка в саду', callback_data='garden'),
+     InlineKeyboardButton(text='У берега моря', callback_data='sea')],
+    [InlineKeyboardButton(text='Назад', callback_data='amount')],
+])
+
+next_back_place = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Назад', callback_data='place'),
+     InlineKeyboardButton(text='Далее', callback_data='colors')]])
 
 """ Выбор стиля свадьбы """
 
@@ -70,4 +84,3 @@ next_back_colors = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Назад', callback_data='colors'),
      InlineKeyboardButton(text='Далее', callback_data='colors')]])
 
-""" Выбор цветовой палитры """

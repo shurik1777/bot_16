@@ -7,6 +7,7 @@ from app_wending.handlers import router
 from app_wending.handlers_1_2 import router_one
 from app_wending.handlers_3 import router_two
 from app_wending.handlers_4 import router_three
+from app_wending.handlers_place import router_four
 
 load_dotenv(find_dotenv())
 
@@ -18,6 +19,7 @@ async def main():
     dp.include_router(router_one)
     dp.include_router(router_two)
     dp.include_router(router_three)
+    dp.include_router(router_four)
     await dp.start_polling(bot)
 
 
