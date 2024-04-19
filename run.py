@@ -11,12 +11,14 @@ from app_wending.handlers_place import router_four
 from app_wending.handlers_fashion import router_five
 from app_wending.handlers_amount import router_six
 from app_wending.handlers_costume import router_seven
+from aiogram.client.bot import DefaultBotProperties
+from aiogram.enums import ParseMode
 
 load_dotenv(find_dotenv())
 
 
 async def main():
-    bot = Bot(token=getenv('TOKEN'))
+    bot = Bot(token=getenv('TOKEN'), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
     dp.include_router(router)
     dp.include_router(router_one)
